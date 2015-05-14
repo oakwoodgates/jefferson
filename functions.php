@@ -111,6 +111,5 @@ function compass_includes() {
 // Add a hook for child themes to execute code.
 do_action( 'flagship_after_setup_parent' );
 
-
 // delete this
 define('SCRIPT_DEBUG', true);

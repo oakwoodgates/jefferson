@@ -45,7 +45,7 @@
 					<?php hybrid_site_description(); ?>
 				</div><!-- #branding -->
 
-				<?php hybrid_get_menu( 'primary' ); ?>
+				<?php // hybrid_get_menu( 'primary' ); ?>
 
 				<?php tha_header_bottom(); ?>
 
