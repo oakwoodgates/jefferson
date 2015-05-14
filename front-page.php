@@ -1,6 +1,6 @@
 <?php
 /**
- * The primary template for all single entries.
+ * The static front page template.
  *
  * @package     Compass
  * @subpackage  HybridCore
@@ -19,8 +19,6 @@
 
 		<?php tha_content_top(); ?>
 
-		<?php hybrid_get_menu( 'breadcrumbs' ); ?>
-
 		<?php if ( have_posts() ) : ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -30,10 +28,6 @@
 				<?php hybrid_get_content_template(); ?>
 
 				<?php tha_entry_after(); ?>
-
-				<?php flagship_post_navigation(); ?>
-
-				<?php comments_template( '', true ); ?>
 
 			<?php endwhile; ?>
 

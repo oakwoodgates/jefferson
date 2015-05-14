@@ -1,6 +1,6 @@
 <?php
 /**
- * The primary template for all single entries.
+ * The primary template for all single pages.
  *
  * @package     Compass
  * @subpackage  HybridCore
@@ -30,8 +30,6 @@
 				<?php hybrid_get_content_template(); ?>
 
 				<?php tha_entry_after(); ?>
-
-				<?php flagship_post_navigation(); ?>
 
 				<?php comments_template( '', true ); ?>
 

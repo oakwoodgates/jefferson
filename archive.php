@@ -1,6 +1,6 @@
 <?php
 /**
- * The primary template for all single entries.
+ * The template for displaying archive pages.
  *
  * @package     Compass
  * @subpackage  HybridCore
@@ -21,6 +21,8 @@
 
 		<?php hybrid_get_menu( 'breadcrumbs' ); ?>
 
+		<?php get_template_part( 'content/parts/loop-meta' ); ?>
+
 		<?php if ( have_posts() ) : ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -31,11 +33,9 @@
 
 				<?php tha_entry_after(); ?>
 
-				<?php flagship_post_navigation(); ?>
-
-				<?php comments_template( '', true ); ?>
-
 			<?php endwhile; ?>
+
+			<?php flagship_posts_navigation(); ?>
 
 		<?php else : ?>
 

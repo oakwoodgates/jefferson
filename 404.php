@@ -1,6 +1,6 @@
 <?php
 /**
- * The primary template for all single entries.
+ * The template for displaying 404 pages (Not Found).
  *
  * @package     Compass
  * @subpackage  HybridCore
@@ -21,27 +21,11 @@
 
 		<?php hybrid_get_menu( 'breadcrumbs' ); ?>
 
-		<?php if ( have_posts() ) : ?>
+		<?php tha_entry_before(); ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+		<?php get_template_part( 'content/error', '404' ); ?>
 
-				<?php tha_entry_before(); ?>
-
-				<?php hybrid_get_content_template(); ?>
-
-				<?php tha_entry_after(); ?>
-
-				<?php flagship_post_navigation(); ?>
-
-				<?php comments_template( '', true ); ?>
-
-			<?php endwhile; ?>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'content/error' ); ?>
-
-		<?php endif; ?>
+		<?php tha_entry_after(); ?>
 
 		<?php tha_content_bottom(); ?>
 
