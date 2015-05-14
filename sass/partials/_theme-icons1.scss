@@ -1,0 +1,257 @@
+/* Theme Icon Padding
+--------------------------------------------- */
+
+a[href^="mailto:"]::before,
+a[href^="tel:"]::before,
+.entry-author a::before,
+.chat-author cite::before,
+.entry-published::before,
+.entry-comments-link::before,
+.post-edit-link::before,
+.entry-permalink::before,
+.post-format-link::before,
+.entry-terms::before,
+.image-sizes::before,
+.entry-views::before,
+.comment-published::before,
+.comment-edit-link::before,
+.comment-author::before,
+.comment-permalink::before {
+	padding-bottom: 2px;
+	padding-right: 3px;
+}
+
+
+/* Link Icons
+--------------------------------------------- */
+
+a[href^="mailto:"]::before {
+	content: "\f141";
+}
+
+a[href^="tel:"]::before {
+	content: "\f139";
+}
+
+
+/* Menu Icon
+--------------------------------------------- */
+
+.menu-button::before {
+	content: "\f143";
+}
+
+.menu-button.activated::before {
+	content: "\f11a";
+}
+
+
+/* Search Icon
+--------------------------------------------- */
+
+.search-form button::before {
+	content: "\f154";
+}
+
+
+/* Post Icons
+--------------------------------------------- */
+
+.entry-author a::before,
+.chat-author cite::before {
+	content: "\f148";
+}
+
+.entry-published::before {
+	content: "\f10b";
+}
+
+.entry-comments-link::before {
+	content: "\f11d";
+}
+
+.post-edit-link::before {
+	content: "\f120";
+}
+
+.entry-permalink::before {
+	content: "\f13d";
+}
+
+.entry-terms.post_tag::before {
+	content: "\f15e";
+}
+
+.entry-terms.category::before {
+	content: "\f114";
+}
+
+.entry-terms.portfolio::before {
+	content: "\f10d";
+}
+
+.format-standard .post-format-link::before {
+	content: "\f10a";
+}
+
+.format-aside .post-format-link::before {
+	content: "\f129";
+}
+
+.format-audio .post-format-link::before {
+	content: "\f12a";
+}
+
+.format-chat .post-format-link::before {
+	content: "\f12b";
+} 
+
+.format-gallery .post-format-link::before {
+	content: "\f12c";
+}
+
+.image-sizes::before,
+.format-image .post-format-link::before {
+	content: "\f12d";
+}
+
+.format-link .post-format-link::before {
+	/* content: "\f12e"; */
+	content: "\f123";
+}
+
+.format-quote .post-format-link::before {
+	content: "\f12f";
+}
+
+.format-status .post-format-link::before {
+	content: "\f158";
+}
+
+.format-video .post-format-link::before {
+	content: "\f132";
+}
+
+
+/* Author Box Icons
+--------------------------------------------- */
+
+.social-gplus a::before {
+	content: "\f136";
+}
+
+.social-twitter a::before {
+	content: "\f161";
+}
+
+.social-facebook a::before {
+	content: "\f125";
+}
+
+.social-rss a::before {
+	content: "\f127";
+}
+
+
+/* Comment Entry Icons
+--------------------------------------------- */
+
+.comment-published::before {
+	content: "\f15f";
+}
+
+.comment-author::before {
+	content: "\f148";
+}
+
+.ping .comment-author::before {
+	content: "\f13d";
+}
+
+.comment-edit-link::before {
+	content: "\f120";
+}
+
+
+/* Comment Reply Icons
+--------------------------------------------- */
+
+.comment-reply-title::before {
+	content: "\f150";
+	padding: 0 3px 1px 0;
+}
+
+.comment-reply-link::before,
+.comment-reply-login::before {
+	content: "\f150";
+	margin-bottom: 3px;
+	padding-right: 5px;
+}
+
+.comment-respond label[for="author"]::before,
+.comment-respond label[for="email"]::before,
+.comment-respond label[for="url"]::before,
+.comment-respond label[for="comment"]::before {
+	color: #494b4c;
+	margin-bottom: 3px;
+	padding: 0 5px;
+}
+
+.comment-respond label[for="author"]::before {
+	content: "\f148";
+}
+
+.comment-respond label[for="email"]::before {
+	content: "\f141";
+}
+
+.comment-respond label[for="url"]::before {
+	content: "\f13d";
+}
+
+.comment-respond label[for="comment"]::before {
+	content: "\f12b";
+}
+
+
+/* Media Info Toggle Icon
+--------------------------------------------- */
+
+.media-info-toggle::after {
+	color: #f5f5f5;
+	content: "\f116";
+	padding-left: 5px;
+	vertical-align: top;
+}
+
+.media-info-toggle.active::after {
+	content: "\f119";
+}
+
+
+/* Media Player Icons
+--------------------------------------------- */
+
+.mejs-button button::after {
+	color: #fff;
+}
+
+.mejs-unmute button::after {
+	color: #494b4c;
+}
+
+.mejs-fullscreen-button button::after {
+	content: "\f14d";
+}
+
+.mejs-play button::after {
+	content: "\f14b";
+}
+
+.mejs-pause button::after {
+	content: "\f147";
+}
+
+.mejs-volume-button button::after {
+	content: "\f165";
+}

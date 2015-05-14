@@ -1,0 +1,169 @@
+/* Loop Pagination
+--------------------------------------------- */
+
+.pagination {
+	display: block;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.pagination .page-numbers {
+	background: #fff;
+	border: 1px solid #e0e0e0;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	display: inline-block;
+	margin-bottom: 10px;
+	padding: 10px 20px;
+	-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+.pagination .current {
+	background: #ebebeb;
+}
+
+.pagination .next:before,
+.pagination .prev:before {
+	font-family: "siteicons";
+}
+
+.pagination .next:before {
+	content: "\f105";
+}
+
+.pagination .prev:before {
+	content: "\f104";
+}
+
+.pagination a {
+	color: #494b4c;
+}
+
+.pagination a:hover,
+.pagination a:focus {
+	background: #f5f5f5;
+	border: 1px solid #dbdbdb;
+}
+
+.rtl .pagination .next:before {
+	content: "\f104";
+}
+
+.rtl .pagination .prev:before {
+	content: "\f105";
+}
+
+
+/* Single Post Pagination
+--------------------------------------------- */
+
+.page-links {
+	display: block;
+	margin: 30px 0;
+}
+
+.page-links span,
+.page-links a {
+	border: 1px solid #e0e0e0;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	color: #494b4c;
+	display: inline-block;
+	padding: 5px 15px;
+	-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+.page-links span {
+	background: #ebebeb;
+}
+
+.page-links a {
+	background: #fff;
+}
+
+.page-links a:hover,
+.page-links a:focus {
+	background: #f5f5f5;
+	color: #494b4c;
+}
+
+
+/* Page Links
+--------------------------------------------- */
+
+@media screen and (min-width: 1023px) {
+	.nav-next a {
+		float: right;
+	}
+}
+
+.nav-next a:after {
+	content: "\f105";
+	font-family: "siteicons";
+	padding-left: 10px;
+}
+
+@media screen and (min-width: 1023px) {
+	.nav-previous a {
+		float: left;
+	}
+}
+
+.nav-previous a:before {
+	content: "\f104";
+	font-family: "siteicons";
+	padding-right: 10px;
+}
+
+.nav-next a,
+.nav-previous a {
+	background: #fff;
+	border: 1px solid #e0e0e0;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	color: #494b4c;
+	display: block;
+	margin: 0 0 10px;
+	padding: 16px 20px 14px;
+	text-align: center;
+}
+
+.nav-next a:hover,
+.nav-previous a:hover,
+.nav-next a:focus,
+.nav-previous a:focus {
+	background: #f5f5f5;
+	color: #494b4c;
+}
+
+
+/* Loop Page Links
+--------------------------------------------- */
+
+.nav-archive {
+	clear: both;
+	display: block;
+	font-size: 0.8888888889rem;
+	letter-spacing: 1px;
+	margin-bottom: 20px;
+	overflow: hidden;
+	padding: 0;
+	text-transform: uppercase;
+}
+
+
+/* Single Entry Page Links
+--------------------------------------------- */
+
+.nav-single {
+	clear: both;
+	display: block;
+	font-size: 0.8888888889rem;
+	letter-spacing: 1px;
+	margin-bottom: 20px;
+	overflow: hidden;
+	padding: 0;
+	text-transform: uppercase;
+}
