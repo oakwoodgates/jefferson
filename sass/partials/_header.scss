@@ -10,7 +10,7 @@
 
 	@include media($medium-screen-up) {
 		padding: 25px 0;
-		@include span-columns(4);
+	//	@include span-columns(4);
 	}
 }
 
