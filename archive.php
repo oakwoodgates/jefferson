@@ -11,7 +11,7 @@
 ?>
 <?php get_header(); ?>
 
-<?php /* <div <?php hybrid_attr( 'site-inner' ); ?>> */?>
+<?php /* <div <?php hybrid_attr( 'site-inner' ); ?>> */ ?>
 
 	<?php tha_content_before(); ?>
 
