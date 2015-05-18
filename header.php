@@ -57,4 +57,5 @@
 
 		<?php hybrid_get_menu( 'secondary' ); ?>
 
+		<!-- original wrapper from pages moved to header.php -->
 		<div <?php hybrid_attr( 'site-inner' ); ?>>
