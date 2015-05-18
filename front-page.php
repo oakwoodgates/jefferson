@@ -11,7 +11,7 @@
 ?>
 <?php get_header(); ?>
 
-<div <?php hybrid_attr( 'site-inner' ); ?>>
+<?php /* <div <?php hybrid_attr( 'site-inner' ); ?>> */?>
 
 	<?php tha_content_before(); ?>
 
@@ -45,7 +45,7 @@
 
 	<?php hybrid_get_sidebar( 'primary' ); ?>
 
-</div><!-- #site-inner -->
+<?php /* </div><!-- #site-inner --> */ ?>
 
 <?php
 get_footer();

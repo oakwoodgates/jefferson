@@ -56,3 +56,5 @@
 		<?php tha_header_after(); ?>
 
 		<?php hybrid_get_menu( 'secondary' ); ?>
+
+		<div <?php hybrid_attr( 'site-inner' ); ?>>
