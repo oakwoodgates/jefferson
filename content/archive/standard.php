@@ -1,6 +1,6 @@
 <?php
 /**
- * A template part for displaying single entries.
+ * A template part for displaying an entry within an archive.
  *
  * @package     Compass
  * @subpackage  HybridCore
@@ -13,9 +13,21 @@
 
 	<?php tha_entry_top(); ?>
 
+	<?php
+	// Display a featured image if we can find something to display.
+	get_the_image(
+		array(
+			'size'   => 'compass-full',
+			'order'  => array( 'featured', 'attachment' ),
+			'before' => '<div class="featured-media image">',
+			'after'  => '</div>',
+		)
+	);
+	?>
+
 	<header class="entry-header">
 
-		<h1 <?php hybrid_attr( 'entry-title' ); ?>><?php single_post_title(); ?></h1>
+		<?php the_title( '<h2 ' . hybrid_get_attr( 'entry-title' ) . '><a href="' . get_permalink() . '" rel="bookmark" itemprop="url">', '</a></h2>' ); ?>
 
 		<p class="entry-meta">
 			<?php flagship_entry_author(); ?>
@@ -26,10 +38,9 @@
 
 	</header><!-- .entry-header -->
 
-	<div <?php hybrid_attr( 'entry-content' ); ?>>
-		<?php the_content(); ?>
-		<?php wp_link_pages(); ?>
-	</div><!-- .entry-content -->
+	<div <?php hybrid_attr( 'entry-summary' ); ?>>
+		<?php the_excerpt(); ?>
+	</div><!-- .entry-summary -->
 
 	<?php get_template_part( 'content/parts/entry-footer' ); ?>
 
