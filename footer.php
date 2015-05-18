@@ -11,6 +11,8 @@
  * @since       1.0.0
  */
 ?>
+		</div><!-- #site-inner from wrapper -->
+
 		<?php tha_footer_before(); ?>
 
 		<footer <?php hybrid_attr( 'footer' ); ?>>
