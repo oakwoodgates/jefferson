@@ -11,7 +11,7 @@
 	}
 }
 
-.content .entry {
+.content .entry, #content .entry {
 	background-color: $entry-background-color;
 	border-bottom: 1px solid $entry-border-color;
 

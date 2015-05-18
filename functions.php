@@ -82,6 +82,9 @@ function compass_setup() {
 
 	// https://github.com/FlagshipWP/flagship-library/wiki/Flagship-Footer-Widgets
 	add_theme_support( 'flagship-footer-widgets', 3 );
+
+	// http://docs.woothemes.com/document/third-party-custom-theme-compatibility
+	add_theme_support( 'woocommerce' );
 }
 
 add_action( 'after_setup_theme', 'compass_includes', 10 );
