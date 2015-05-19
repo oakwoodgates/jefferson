@@ -75,7 +75,7 @@ foreach ( array( 'term_description' ) as $filter ) {
 if (!function_exists('woocommerce_template_single_excerpt')) {
    function woocommerce_template_single_excerpt( $post ) {
    	   global $post;
-       if ($post->post_excerpt) echo '<div itemprop="description">' . do_shortcode(wpautop(wptexturize($post->post_excerpt))) . '</div>';
+       if ( $post->post_excerpt ) echo '<div itemprop="description">' . do_shortcode(wpautop(wptexturize($post->post_excerpt))) . '</div>';
    }
 }
 
@@ -86,9 +86,10 @@ if (!function_exists('woocommerce_template_single_excerpt')) {
  * @since  0.1.2
  * @link   http://docs.woothemes.com/document/change-number-of-products-per-row/
  */
-add_filter('loop_shop_columns', 'loop_columns');
-if (!function_exists('loop_columns')) {
+add_filter( 'loop_shop_columns', 'loop_columns' );
+if ( !function_exists( 'loop_columns' )) {
 	function loop_columns() {
 		return 2; // 2 products per row
 	}
 }
+

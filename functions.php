@@ -85,6 +85,7 @@ function compass_setup() {
 
 	// http://docs.woothemes.com/document/third-party-custom-theme-compatibility
 	add_theme_support( 'woocommerce' );
+
 }
 
 add_action( 'after_setup_theme', 'compass_includes', 10 );
