@@ -259,7 +259,6 @@ if ( ! class_exists( 'Flagship_Library' ) ) {
 					'functions/template-general.php',
 					'functions/template.php',
 					'functions/deprecated.php',
-					'functions/woocommerce.php',
 				)
 			);
 			// Include our library files.
