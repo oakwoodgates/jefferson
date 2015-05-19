@@ -109,6 +109,8 @@ function compass_includes() {
 	require_once $includes_dir . 'general.php';
 	require_once $includes_dir . 'scripts.php';
 	require_once $includes_dir . 'widgetize.php';
+	require_once $includes_dir . 'woocommerce.php';
+	require_once $includes_dir . 'bbpress.php';
 }
 
 // Add a hook for child themes to execute code.
