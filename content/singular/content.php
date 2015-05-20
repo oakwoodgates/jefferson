@@ -13,6 +13,20 @@
 
 	<?php tha_entry_top(); ?>
 
+	<?php
+	// Display a featured image if we can find something to display.
+	get_the_image(
+		array(
+			'size'          => 'compass-full',
+			'scan'          => true,
+			'caption'       => false,
+			'order'         => array( 'featured', 'attachment', 'scan_raw', 'scan', ),
+			'before'        => '<div class="featured-media image">',
+			'after'         => '</div>',
+		)
+	);
+	?>
+
 	<header class="entry-header">
 
 		<h1 <?php hybrid_attr( 'entry-title' ); ?>><?php single_post_title(); ?></h1>
