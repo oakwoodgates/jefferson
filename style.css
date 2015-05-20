@@ -3438,6 +3438,19 @@ div.gform_wrapper .gform_footer input[type=submit] {
   font-size: 0.88889rem;
   padding: 16px 24px; }
 
+/* bbPress
+--------------------------------------------- */
+/* https://codex.bbpress.org/layout-and-functionality-examples-you-can-use/ */
+/*Styling for forum description */
+#bbpress-forums div.bbp-forum-content {
+  clear: both !important;
+  margin-left: 0px !important;
+  padding: 0 0 0 0 !important; }
+
+/*styling to move 'Subscribe' to right hand side */
+.subscription-toggle {
+  float: right !important; }
+
 /* Jetpack
 --------------------------------------------- */
 #wpstats {

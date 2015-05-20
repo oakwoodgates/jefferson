@@ -85,6 +85,7 @@ function compass_setup() {
 
 	// http://docs.woothemes.com/document/third-party-custom-theme-compatibility
 	add_theme_support( 'woocommerce' );
+
 }
 
 add_action( 'after_setup_theme', 'compass_includes', 10 );
@@ -109,6 +110,14 @@ function compass_includes() {
 	require_once $includes_dir . 'general.php';
 	require_once $includes_dir . 'scripts.php';
 	require_once $includes_dir . 'widgetize.php';
+
+	if ( class_exists( 'woocommerce' ) ) {
+		require_once $includes_dir . 'woocommerce.php';
+	}
+
+	if ( class_exists( 'bbPress' ) ) {
+		require_once $includes_dir . 'bbpress.php';
+	}
 }
 
 // Add a hook for child themes to execute code.
@@ -116,3 +125,10 @@ do_action( 'flagship_after_setup_parent' );
 
 // delete this
 define('SCRIPT_DEBUG', true);
+
+add_filter( 'hybrid_content_template_hierarchy', 'oakwood_content_template_hierarchy' );
+
+function oakwood_content_template_hierarchy( $templates ) {
+	$templates = array_merge(array_diff($templates, array('content.php')));
+	return $templates;
+}

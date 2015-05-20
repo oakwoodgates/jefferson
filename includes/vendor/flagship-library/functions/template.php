@@ -29,5 +29,6 @@ function flagship_content_template_hierarchy( $templates ) {
 	} else {
 		$templates = str_replace( 'content/', 'content/archive/', $templates );
 	}
+
 	return $templates;
 }
