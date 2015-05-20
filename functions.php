@@ -10,7 +10,7 @@
  */
 
 // Include Hybrid Core.
-require_once( trailingslashit( get_template_directory() ) . 'hybrid-core/hybrid.php' );
+require_once( trailingslashit( get_template_directory() ) . 'includes/hybrid-core/hybrid.php' );
 new Hybrid();
 
 add_action( 'after_setup_theme', 'compass_setup', 10 );
@@ -100,24 +100,19 @@ function compass_includes() {
 	$includes_dir = trailingslashit( get_template_directory() ) . 'includes/';
 
 	// Load the main file in the Flagship library directory.
-	require_once $includes_dir . 'vendor/flagship-library/flagship-library.php';
+	require_once $includes_dir . 'flagship-library/flagship-library.php';
+
+	// Load oakwood.php
+	require_once $includes_dir . 'oakwood/oakwood.php';
 
 	// Load all PHP files in the vendor directory.
-	require_once $includes_dir . 'vendor/tha-theme-hooks.php';
+	// require_once $includes_dir . 'tha-theme-hooks.php';
 
 	// Load all PHP files in the includes directory.
-	require_once $includes_dir . 'compatibility.php';
+//	require_once $includes_dir . 'compatibility.php';
 	require_once $includes_dir . 'general.php';
 	require_once $includes_dir . 'scripts.php';
 	require_once $includes_dir . 'widgetize.php';
-
-	if ( class_exists( 'woocommerce' ) ) {
-		require_once $includes_dir . 'woocommerce.php';
-	}
-
-	if ( class_exists( 'bbPress' ) ) {
-		require_once $includes_dir . 'bbpress.php';
-	}
 }
 
 // Add a hook for child themes to execute code.
@@ -125,10 +120,3 @@ do_action( 'flagship_after_setup_parent' );
 
 // delete this
 define('SCRIPT_DEBUG', true);
-
-add_filter( 'hybrid_content_template_hierarchy', 'oakwood_content_template_hierarchy' );
-
-function oakwood_content_template_hierarchy( $templates ) {
-	$templates = array_merge(array_diff($templates, array('content.php')));
-	return $templates;
-}

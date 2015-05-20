@@ -17,11 +17,6 @@ add_action( 'after_setup_theme', 'compass_jetpack_setup', 12 );
  * @return void
  */
 function compass_jetpack_setup() {
-	// Return early if Jetpack isn't activated.
-	if ( ! class_exists( 'Jetpack' ) ) {
-		return;
-	}
-
 	// Add support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'content',
