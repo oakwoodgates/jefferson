@@ -125,3 +125,10 @@ do_action( 'flagship_after_setup_parent' );
 
 // delete this
 define('SCRIPT_DEBUG', true);
+
+add_filter( 'hybrid_content_template_hierarchy', 'oakwood_content_template_hierarchy' );
+
+function oakwood_content_template_hierarchy( $templates ) {
+	$templates = array_merge(array_diff($templates, array('content.php')));
+	return $templates;
+}

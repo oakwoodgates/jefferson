@@ -13,7 +13,7 @@
  */
 ?>
 <?php
-/*	hybrid_get_content_template(); */
+hybrid_get_content_template();
 
 /*	assert( "locate_template( array('content/singular/content.php', ''), true, false )" ); */
 
