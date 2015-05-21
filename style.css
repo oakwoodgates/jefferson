@@ -3457,3 +3457,10 @@ div.gform_wrapper .gform_footer input[type=submit] {
   display: none; }
 
 /*# sourceMappingURL=style.css.map */
+
+#m-container .entry {
+  width: 48%;
+  margin-left:1%;
+  margin-right: 1%;
+
+}

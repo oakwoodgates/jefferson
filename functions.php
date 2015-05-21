@@ -110,9 +110,10 @@ function compass_includes() {
 
 	// Load all PHP files in the includes directory.
 //	require_once $includes_dir . 'compatibility.php';
-	require_once $includes_dir . 'general.php';
-	require_once $includes_dir . 'scripts.php';
-	require_once $includes_dir . 'widgetize.php';
+	require_once $includes_dir . 'theme/general.php';
+	require_once $includes_dir . 'theme/scripts.php';
+	require_once $includes_dir . 'theme/widgetize.php';
+	require_once $includes_dir . 'theme/hooks.php';
 }
 
 // Add a hook for child themes to execute code.

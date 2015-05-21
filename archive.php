@@ -19,7 +19,7 @@
 
 		<?php tha_content_top(); ?>
 
-		<?php hybrid_get_menu( 'breadcrumbs' ); ?>
+		<?php /* hybrid_get_menu( 'breadcrumbs' ); */ ?>
 
 		<?php get_template_part( 'content/parts/loop-meta' ); ?>
 
