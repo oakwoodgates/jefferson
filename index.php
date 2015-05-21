@@ -35,15 +35,15 @@
 
 		<?php if ( have_posts() ) : ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php tha_entry_before(); ?>
+						<?php tha_entry_before(); ?>
 
-				<?php hybrid_get_content_template(); ?>
+						<?php hybrid_get_content_template(); ?>
 
-				<?php tha_entry_after(); ?>
+						<?php tha_entry_after(); ?>
 
-			<?php endwhile; ?>
+				<?php endwhile; ?>
 
 			<?php flagship_posts_navigation(); ?>
 
