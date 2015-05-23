@@ -28,23 +28,6 @@
 - */
 !function(a){"use strict";var b=a.Masonry;b.prototype._remapV2Options=function(){this._remapOption("gutterWidth","gutter"),this._remapOption("isResizable","isResizeBound"),this._remapOption("isRTL","isOriginLeft",function(a){return!a});var a=this.options.isAnimated;if(void 0!==a&&(this.options.transitionDuration=a?b.prototype.options.transitionDuration:0),void 0===a||a){var c=this.options.animationOptions,d=c&&c.duration;d&&(this.options.transitionDuration="string"==typeof d?d:d+"ms")}},b.prototype._remapOption=function(a,b,c){var d=this.options[a];void 0!==d&&(this.options[b]=c?c(d):d)};var c=b.prototype._create;b.prototype._create=function(){var a=this;this._remapV2Options(),c.apply(this,arguments),setTimeout(function(){jQuery(a.element).addClass("masonry")},0)};var d=b.prototype.layout;b.prototype.layout=function(){this._remapV2Options(),d.apply(this,arguments)};var e=b.prototype.option;b.prototype.option=function(){e.apply(this,arguments),this._remapV2Options()};var f=b.prototype._itemize;b.prototype._itemize=function(a){var b=f.apply(this,arguments);return jQuery(a).addClass("masonry-brick"),b};var g=b.prototype.measureColumns;b.prototype.measureColumns=function(){var a=this.options.columnWidth;a&&"function"==typeof a&&(this.getContainerWidth(),this.columnWidth=a(this.containerWidth)),g.apply(this,arguments)},b.prototype.reload=function(){this.reloadItems.apply(this,arguments),this.layout.apply(this)};var h=b.prototype.destroy;b.prototype.destroy=function(){var a=this.getItemElements();jQuery(this.element).removeClass("masonry"),jQuery(a).removeClass("masonry-brick"),h.apply(this,arguments)}}(window);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*! Gamajo Accessible Menu - v1.0.0 - 2014-09-08
 * https://github.com/GaryJones/accessible-menu
 * Copyright (c) 2014 Gary Jones; Licensed MIT */
@@ -181,6 +164,7 @@
         "iframe[src*='youtube.com']",
         "iframe[src*='youtube-nocookie.com']",
         "iframe[src*='kickstarter.com'][src*='video.html']",
+        "embed[src*='v.wordpress.com']",
         "object",
         "embed"
       ];
@@ -598,17 +582,41 @@ window.compass = window.compass || {};
 	});
 })( this, jQuery );
 
-jQuery( document ).ready( function( $ ) {
-
-	var $container = $('#m-container');
-
-	$container.imagesLoaded( function() {
-		$container.masonry({
-			itemSelector: '.entry',
-			// set columnWidth a fraction of the container width
+// masonry
+jQuery( document ).ready(function( $ ){
+    
+    var $container = $('#m-container');
+    
+    $container.imagesLoaded(function(){
+      $container.masonry({
+        itemSelector: '.entry',
 			columnWidth: function( containerWidth ) {
 				return containerWidth / 2;
 			}
-		});
-	});
+      });
+    });
+
+    
+  });
+
+// masonry + fitvids + infinite scroll
+
+jQuery( document ).ready( function( $ ) {
+	infinite_count = 0;
+    jQuery( document.body ).on( 'post-load', function() {
+		infinite_count = infinite_count + 1;
+	    var $container = $('#m-container');
+		var $infin_now = $('#infinite-view-' + infinite_count);
+	//	var $infin_then = $('#infinite-view-' + infinite_count - 1);
+		var $elements = $infin_now.find('.entry');
+	    $container.fitVids('reload');
+	    $elements.hide();
+        $container.imagesLoaded(function(){
+	        $container.append( $elements ).masonry( 'appended', $elements.fadeIn() );
+
+        });
+    });
 });
+
+ //       var $newElems = $( newElements ).css({ opacity: 0 });
+//          $newElems.animate({ opacity: 1 });

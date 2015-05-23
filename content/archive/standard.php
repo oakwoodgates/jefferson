@@ -39,7 +39,7 @@
 	</header><!-- .entry-header -->
 
 	<div <?php hybrid_attr( 'entry-summary' ); ?>>
-		<?php the_excerpt(); ?>
+		<?php // the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 
 	<?php get_template_part( 'content/parts/entry-footer' ); ?>

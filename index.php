@@ -56,7 +56,6 @@
 			<?php get_template_part( 'content/error' ); ?>
 
 		<?php endif; ?>
-
 		<?php tha_content_bottom(); ?>
 
 	</main><!-- #content -->

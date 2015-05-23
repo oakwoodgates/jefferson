@@ -17,7 +17,7 @@ $lib_dir = get_template_directory() . '/includes/oakwood/includes/';
 
 // Load all the things to make bbPress better.
 if ( class_exists( 'bbPress' ) ) {
-	require_once $lib_dir . 'bbpress.php';
+//	require_once $lib_dir . 'bbpress.php';
 }
 
 // Load all the things to make jetpack compatible.

@@ -24,6 +24,7 @@
 		<?php get_template_part( 'content/parts/loop-meta' ); ?>
 
 		<?php if ( have_posts() ) : ?>
+			<div id="m-container" class="infinite-scroll">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -34,8 +35,9 @@
 				<?php tha_entry_after(); ?>
 
 			<?php endwhile; ?>
-
 			<?php flagship_posts_navigation(); ?>
+			</div>
+
 
 		<?php else : ?>
 
