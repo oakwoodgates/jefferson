@@ -72,7 +72,7 @@ function my_scripts_method() {
     wp_enqueue_script( 'jquery-masonry' );
 }
 
-// add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
+ add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 // wp_enqueue_scripts action hook to link only on the front-end
 
 
