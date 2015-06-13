@@ -67,6 +67,15 @@ function compass_enqueue_styles() {
 	);
 }
 
+// https://codex.wordpress.org/Function_Reference/wp_enqueue_script#Default_Scripts_Included_and_Registered_by_WordPress
+// function my_scripts_method() {
+//    wp_enqueue_script( 'jquery-masonry' );
+// }
+
+// add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
+
+// wp_enqueue_scripts action hook to link only on the front-end
+
 add_action( 'wp_enqueue_scripts', 'compass_enqueue_scripts' );
 /**
  * Enqueue theme scripts.

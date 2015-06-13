@@ -21,7 +21,10 @@ add_action( 'after_setup_theme', 'compass_jetpack_setup', 12 );
 function compass_jetpack_setup() {
 	// Add support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
-		'container' => 'content',
+		'container' => '#m-container',
 		'footer'    => false,
+	//	'render'	=> false,
+	//	'footer_widgets' => true,
+	//	'wrapper'   => false,
 	) );
 }

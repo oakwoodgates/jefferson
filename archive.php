@@ -19,21 +19,25 @@
 
 		<?php tha_content_top(); ?>
 
-		<?php hybrid_get_menu( 'breadcrumbs' ); ?>
+		<?php /* hybrid_get_menu( 'breadcrumbs' ); */ ?>
 
 		<?php get_template_part( 'content/parts/loop-meta' ); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<div id="m-container" class="infinite-scroll">
 
-				<?php tha_entry_before(); ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php hybrid_get_content_template(); ?>
+					<?php tha_entry_before(); ?>
 
-				<?php tha_entry_after(); ?>
+					<?php hybrid_get_content_template(); ?>
 
-			<?php endwhile; ?>
+					<?php tha_entry_after(); ?>
+
+				<?php endwhile; ?>
+
+			</div>
 
 			<?php flagship_posts_navigation(); ?>
 
