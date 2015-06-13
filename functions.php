@@ -86,6 +86,12 @@ function compass_setup() {
 	// http://docs.woothemes.com/document/third-party-custom-theme-compatibility
 	add_theme_support( 'woocommerce' );
 
+//	add_theme_support( 'custom-header' );
+
+//	add_theme_support( 'jetpack-responsive-videos' );
+
+	add_theme_support( 'widget-customizer' );
+
 }
 
 add_action( 'after_setup_theme', 'compass_includes', 10 );
@@ -114,6 +120,7 @@ function compass_includes() {
 	require_once $includes_dir . 'theme/scripts.php';
 	require_once $includes_dir . 'theme/widgetize.php';
 	require_once $includes_dir . 'theme/hooks.php';
+//	require_once $includes_dir . 'themify-builder/themify-builder.php';	
 }
 
 // Add a hook for child themes to execute code.

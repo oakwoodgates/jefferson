@@ -1,9 +1,15 @@
 <?php
 /**
  * Fallback for plugins that expect a content.php file.
+ *
  * get_template_part( 'content', get_post_format() )
- * would revert here. 
- * We should get our content file directory.
+ * or something similar would revert here.
+ *
+ * We should use our content template directory, so let's give the plugin a
+ * chance to look in our content directory and find the correct template.
+ *
+ * If nothing is available, it will default to
+ * content/singular/content.php or content/archive/content.php depending.
  *
  * @package     
  * @subpackage  HybridCore

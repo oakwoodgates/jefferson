@@ -21,9 +21,9 @@ if ( class_exists( 'bbPress' ) ) {
 }
 
 // Load all the things to make jetpack compatible.
-if ( class_exists( 'Jetpack' ) ) {
+// if ( class_exists( 'Jetpack' ) ) {
 	require_once $lib_dir . 'jetpack.php';
-}
+// }
 
 // Load all the woocommerce things.
 if ( class_exists( 'woocommerce' ) ) {
@@ -38,3 +38,9 @@ require_once $lib_dir . 'template-hierarchy.php';
 
 // Load the WP functions we like to use.
 require_once $lib_dir . 'general.php';
+
+// ACF things and stuff
+// require_once $lib_dir . 'acf.php';
+
+// require_once $lib_dir . 'kirki.php';
+// require_once $lib_dir . 'cmb2.php';
