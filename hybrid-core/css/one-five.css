@@ -9,7 +9,7 @@ html, body, div, span, object, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, ab
 	text-decoration: none;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main { 
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main {
 	display: block;
 }
 
@@ -45,8 +45,10 @@ p, figure {
 	margin: 0 0 1.5rem;
 }
 
-ol, ul {
-	list-style: none;
+p:empty {
+	margin:      0;
+	padding:     0;
+	line-height: 0;
 }
 
 ul {
@@ -54,10 +56,7 @@ ul {
 	margin:     0 0 1.5rem;
 }
 
-ol {
-	list-style: decimal;
-	margin:     0 0 1.5rem;
-}
+ol { margin: 0 0 1.5rem; }
 
 	.ltr ul,
 	.ltr ol { margin-left: 3rem; }
@@ -65,18 +64,32 @@ ol {
 	.rtl ul,
 	.rtl ol { margin-right: 3rem; }
 
+	ol.disc,                 ul.disc                 { list-style: disc;                 }
+	ol.armenian,             ul.armenian             { list-style: armenian;             }
+	ol.circle,               ul.circle               { list-style: circle;               }
+	ol.cjk-ideographic,      ul.cjk-ideographic      { list-style: cjk-ideographic;      }
+	ol.decimal,              ul.decimal              { list-style: decimal;              }
+	ol.decimal-leading-zero, ul.decimal-leading-zero { list-style: decimal-leading-zero; }
+	ol.georgian,             ul.georgian             { list-style: georgian;             }
+	ol.hebrew,               ul.hebrew               { list-style: hebrew;               }
+	ol.hiragana,             ul.hiragana             { list-style: hiragana;             }
+	ol.hiragana-iroha,       ul.hiragana-iroha       { list-style: hiragana-iroha;       }
+	ol.katakana,             ul.katakana             { list-style: katakana;             }
+	ol.kataka-iroha,         ul.katakana-iroha       { list-style: katakana-iroha;       }
+	ol.lower-alpa,           ul.lower-alpha          { list-style: lower-alpha;          }
+	ol.lower-greek,          ul.lower-greek          { list-style: lower-greek;          }
+	ol.lower-latin,          ul.lower-latin          { list-style: lower-latin;          }
+	ol.lower-roman,          ul.lower-roman          { list-style: lower-roman;          }
+	ol.none,                 ul.none                 { list-style: none;                 }
+	ol.square,               ul.square               { list-style: square;               }
+	ol.upper-alpha,          ul.upper-alpha          { list-style: upper-alpha;          }
+	ol.upper-latin,          ul.upper-latin          { list-style: upper-latin;          }
+	ol.upper-roman,          ul.upper-roman          { list-style: upper-roman;          }
+	ol.initial,              ul.initial              { list-style: initial;              }
 
-ol ol { list-style: upper-roman; }
-
-	ol ol ol { list-style: lower-roman; }
-
-		ol ol ol ol { list-style: upper-alpha; }
-
-			ol ol ol ol ol { list-style: lower-alpha; }
-
-ul ul, 
-ol ol, 
-ul ol, 
+ul ul,
+ol ol,
+ul ol,
 ol ul {
 	margin-bottom: 0;
 }
@@ -139,12 +152,12 @@ strong { font-weight: 700; }
 /* === Emphasis, italics, etc. === */
 
 i,
-em, 
+em,
 mark,
 cite { font-style: italic; }
 
 i i,
-em em, 
+em em,
 mark mark,
 cite cite { font-style: normal; }
 
@@ -173,8 +186,8 @@ big {
 
 /* === Small, sup, sub === */
 
-small, 
-sup, 
+small,
+sup,
 sub {
 	font-size: .8125em;
 }
@@ -206,7 +219,7 @@ blockquote {
 }
 
 	blockqoute i,
-	blockquote em, 
+	blockquote em,
 	blockquote cite {
 		font-style: normal;
 	}
@@ -236,15 +249,15 @@ code {
 	font-family: monospace;
 }
 
-ins, 
+ins,
 dfn {
 	font-style:      italic;
 	text-decoration: none;
 	border-bottom:   1px solid #999;
 }
 
-del, 
-s, 
+del,
+s,
 strike {
 	text-decoration: line-through;
 }
@@ -262,7 +275,7 @@ select {
 	font-family: inherit;
 }
 
-input, 
+input,
 textarea {
 	box-sizing: content-box;
 }
@@ -289,7 +302,7 @@ table {
 	margin-bottom:   1.5rem;
 }
 
-	th, 
+	th,
 	td {
 		text-align: left;
 	}
@@ -306,13 +319,17 @@ img {
 	height:          auto;
 }
 
-img.wp-smiley {
-	max-height: 12px;
-	margin:     0;
+img.wp-smiley,
+img.emoji {
+	display:    inline;
+	box-shadow: none;
+	max-height: 1em;
+	width:      1em;
+	margin:     0 .07em;
 	padding:    0;
 	border:     none;
 	background: transparent;
-	}
+}
 
 .gallery {
 	display:       block;
@@ -320,23 +337,29 @@ img.wp-smiley {
 	margin-bottom: 1.5rem;
 }
 
-.alignleft, 
-.left {
-	float:        left;
-	margin-right: 1.5rem;
-}
-
-.alignright, 
-.right {
-	float:       right;
-	margin-left: 1.5rem;
-}
-
-.aligncenter, 
-.center {
+.aligncenter,
+.alignright,
+.alignleft {
 	display: block;
 	margin:  0 auto 1.5rem;
 }
+
+	p .aligncenter,
+	p .alignright,
+	p .alignleft { margin-bottom: 0; }
+
+	@media only screen and ( min-width: 480px ) {
+
+		.alignleft {
+			float:        left;
+			margin-right: 1.5rem;
+		}
+
+		.alignright {
+			float:       right;
+			margin-left: 1.5rem;
+		}
+	}
 
 .alignnone {
 	float: none;
@@ -346,12 +369,12 @@ img.wp-smiley {
 	clear: both;
 }
 
-img.alignleft, 
+img.alignleft,
 img.alignright {
 	display: inline;
 }
 
-blockquote.alignleft, 
+blockquote.alignleft,
 blockquote.alignright {
 	width: 33%;
 }
