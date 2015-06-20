@@ -6,17 +6,17 @@
 }
 @media (min-width: 600px) {
   .container {
-    width: 750px;
+    width: 590px;
   }
 }
 @media (min-width: 768px) {
   .container {
-    width: 970px;
+    width: 750px;
   }
 }
 @media (min-width: 992px) {
   .container {
-    width: 1170px;
+    width: 970px;
   }
 }
 .container-fluid {
@@ -34,6 +34,9 @@
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+}
+.col-no-pad{
+  padding:0;
 }
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;

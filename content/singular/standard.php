@@ -1,6 +1,6 @@
 <?php
 /**
- * A template part for displaying an entry within an archive.
+ * A template part for displaying single entries.
  *
  * @package     Compass
  * @subpackage  HybridCore
@@ -17,17 +17,19 @@
 	// Display a featured image if we can find something to display.
 	get_the_image(
 		array(
-			'size'   => 'compass-full',
-			'order'  => array( 'featured', 'attachment' ),
-			'before' => '<div class="featured-media image">',
-			'after'  => '</div>',
+			'size'          => 'compass-full',
+			'scan'          => true,
+			'caption'       => false,
+			'order'         => array( 'featured', 'attachment', 'scan_raw', 'scan', ),
+			'before'        => '<div class="featured-media image">',
+			'after'         => '</div>',
 		)
 	);
 	?>
 
 	<header class="entry-header">
 
-		<?php the_title( '<h2 ' . hybrid_get_attr( 'entry-title' ) . '><a href="' . get_permalink() . '" rel="bookmark" itemprop="url">', '</a></h2>' ); ?>
+		<h1 <?php hybrid_attr( 'entry-title' ); ?>><?php single_post_title(); ?></h1>
 
 		<p class="entry-meta">
 			<?php flagship_entry_author(); ?>
@@ -38,9 +40,10 @@
 
 	</header><!-- .entry-header -->
 
-	<div <?php hybrid_attr( 'entry-summary' ); ?>>
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
+	<div <?php hybrid_attr( 'entry-content' ); ?>>
+		<?php the_content(); ?>
+		<?php wp_link_pages(); ?>
+	</div><!-- .entry-content -->
 
 	<?php get_template_part( 'content/parts/entry-footer' ); ?>
 

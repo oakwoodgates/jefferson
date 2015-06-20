@@ -544,7 +544,7 @@ function hybrid_attr_comment( $attr ) {
 
 	if ( in_array( get_comment_type(), array( '', 'comment' ) ) ) {
 
-		$attr['itemprop']  = 'comment';
+		$attr['itemprop']  = '';
 		$attr['itemscope'] = 'itemscope';
 		$attr['itemtype']  = 'http://schema.org/UserComments';
 	}
