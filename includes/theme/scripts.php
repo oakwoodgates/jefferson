@@ -96,3 +96,33 @@ function compass_enqueue_scripts() {
 		true
 	);
 }
+
+
+
+// Always use wp_enqueue_scripts action hook to both enqueue and register scripts
+add_action( 'wp_enqueue_scripts', 'enqueue_and_register_my_scripts' );
+
+function enqueue_and_register_my_scripts(){
+
+    // Use `get_stylesheet_directory_uri() if your script is inside your theme or child theme.
+    wp_register_script( 'my-script', get_stylesheet_directory_uri() . '/bootstrap/js/bootstrap.js' );
+    wp_register_style( 'my-plugin', get_stylesheet_directory_uri() . '/bootstrap/css/bootstrap.css' );
+    wp_register_style( 'my-theme', get_stylesheet_directory_uri() . '/bootstrap/css/bootstrap-theme.css' );
+
+	wp_enqueue_script( 'my-script', get_stylesheet_directory_uri() . '/bootstrap/js/bootstrap.js', 'jquery' );
+	wp_enqueue_style( 'my-plugin' );
+//	wp_enqueue_style( 'my-theme' );
+
+
+}
+
+// Register style sheet.
+add_action( 'wp_enqueue_scripts', 'register_plugin_styles' );
+
+/**
+ * Register style sheet.
+ */
+function register_plugin_styles() {
+	wp_register_style( 'my-plugin', plugins_url( 'my-plugin/css/plugin.css' ) );
+	wp_enqueue_style( 'my-plugin' );
+}

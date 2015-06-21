@@ -26,6 +26,45 @@ add_filter( 'hybrid_attr_entry-summary',    'flagship_attr_entry_summary_class' 
 // Other attributes.
 add_filter( 'hybrid_attr_nav',              'flagship_attr_nav', 10, 2 );
 
+add_filter( 'hybrid_attr_container',             'flagship_attr_container', 10, 2 );
+
+add_filter( 'hybrid_attr_content',              'flagship_attr_content', 10 );
+
+function flagship_attr_content( $attr ) {
+	$attr['id']		= 'content';
+	$attr['class']	= 'content col-md-8';
+	$attr['role']	= 'main';
+
+	if ( ! is_singular( 'post' ) && ! is_home() && ! is_archive() ) {
+		$attr['itemprop'] = 'mainContentOfPage';
+	}
+	return $attr;
+}
+
+
+
+
+
+
+/**
+ * Bootstrap container wrap element attributes.
+ *
+ * @since  1.0.0
+ * @access public
+ * @param  array $attr
+ * @return array
+ */
+function flagship_attr_container( $attr, $context ) {
+	if ( empty( $context ) ) {
+		return $attr;
+	}
+	
+	$attr['class'] = "container {$context}-container";
+	return $attr;
+}
+
+
+
 /**
  * Page site container element attributes.
  *
@@ -66,6 +105,7 @@ function flagship_attr_wrap( $attr, $context ) {
 	if ( empty( $context ) ) {
 		return $attr;
 	}
+	
 	$attr['class'] = "wrap {$context}-wrap";
 	return $attr;
 }
@@ -83,7 +123,7 @@ function flagship_attr_sidebar_class( $attr, $context ) {
 	if ( empty( $context ) ) {
 		return $attr;
 	}
-	$attr['class'] .= " sidebar-{$context}";
+	$attr['class'] .= " sidebar-{$context} col-md-4";
 	return $attr;
 }
 
