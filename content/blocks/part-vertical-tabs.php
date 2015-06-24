@@ -2,8 +2,6 @@
 <div class="vertical-tabs-container">
   
 <?php
-  wp_reset_postdata();
-
 
 // The Query
 $the_query = new WP_Query( 'post_type=manifest_testimonial' );
