@@ -11,6 +11,7 @@
  * @since       1.0.0
  */
 ?>
+			</div><!-- row -->
 		</div><!-- #site-inner from wrapper -->
 
 		<?php tha_footer_before(); ?>
@@ -19,7 +20,7 @@
 
 			<?php tha_footer_top(); ?>
 
-			<div <?php hybrid_attr( 'wrap', 'footer' ); ?>>
+			<div <?php hybrid_attr( 'container', 'footer' ); ?>>
 
 				<p class="credit">
 					<?php
@@ -33,7 +34,7 @@
 					?>
 				</p><!-- .credit -->
 
-			</div><!-- .wrap -->
+			</div><!-- .footer-container -->
 
 			<?php tha_footer_bottom(); ?>
 

@@ -19,10 +19,14 @@ add_action( 'init', 'compass_register_image_sizes', 5 );
  */
 function compass_register_image_sizes() {
 	// Set the 'post-thumbnail' size.
-	set_post_thumbnail_size( 175, 130, true );
+//	set_post_thumbnail_size( 175, 130, true );
+	set_post_thumbnail_size( 350, 260, true );
 
 	// Add the 'compass-full' image size.
 	add_image_size( 'compass-full', 1025, 500, true );
+	add_image_size( 'compass-thumb', 175, 130, true );
+	add_image_size( 'compass-square', 130, 130, true );
+
 }
 
 add_filter( 'excerpt_length', 'compass_excerpt_length' );

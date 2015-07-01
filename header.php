@@ -35,7 +35,7 @@
 
 		<header <?php hybrid_attr( 'header' ); ?>>
 
-			<div <?php hybrid_attr( 'wrap', 'header' ); ?>>
+			<div <?php hybrid_attr( 'container', 'header' ); ?>>
 
 				<?php tha_header_top(); ?>
 
@@ -58,4 +58,5 @@
 		<?php hybrid_get_menu( 'secondary' ); ?>
 
 		<!-- original wrapper from pages moved to header.php -->
-		<div <?php hybrid_attr( 'site-inner' ); ?>>
+		<div <?php hybrid_attr( 'container', 'inner' ); ?>>
+			<div class="row">

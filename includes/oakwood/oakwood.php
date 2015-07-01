@@ -44,3 +44,8 @@ require_once $lib_dir . 'general.php';
 
 // require_once $lib_dir . 'kirki.php';
 // require_once $lib_dir . 'cmb2.php';
+
+
+$styles_dir = get_template_directory() . '/includes/oakwood/styles/';
+ require_once $styles_dir . 'base.php';
+
