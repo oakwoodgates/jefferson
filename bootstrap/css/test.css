@@ -1,0 +1,24 @@
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+
+img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.media-left img {
+  display:table-cell;
+  max-width: inherit;
+}
+
+.no-padding {
+  padding:0;
+}
+
+.panel-footer.no-padding .btn-group .btn {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}

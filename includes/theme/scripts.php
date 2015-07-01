@@ -107,11 +107,11 @@ function enqueue_and_register_my_scripts(){
     // Use `get_stylesheet_directory_uri() if your script is inside your theme or child theme.
     wp_register_script( 'my-script', get_stylesheet_directory_uri() . '/bootstrap/js/bootstrap.js' );
     wp_register_style( 'my-plugin', get_stylesheet_directory_uri() . '/bootstrap/css/bootstrap.css' );
-    wp_register_style( 'my-theme', get_stylesheet_directory_uri() . '/bootstrap/css/bootstrap-theme.css' );
+    wp_register_style( 'my-theme', get_stylesheet_directory_uri() . '/bootstrap/css/test.css' );
 
 	wp_enqueue_script( 'my-script', get_stylesheet_directory_uri() . '/bootstrap/js/bootstrap.js', 'jquery' );
 	wp_enqueue_style( 'my-plugin' );
-//	wp_enqueue_style( 'my-theme' );
+	wp_enqueue_style( 'my-theme' );
 
 
 }

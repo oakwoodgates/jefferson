@@ -3,19 +3,26 @@
 $the_query = new WP_Query( 'post_type=manifest_testimonial' );
 
 // The Loop
-if ( $the_query->have_posts() ) : 
+if ( $the_query->have_posts() ) :
+  $i=0;
 ?>
-<div class="row">
+
 <ul class="media-list">
 
 	<?php  while ( $the_query->have_posts() ) : 
 
 	$the_query->the_post();
+
+  if ( $i & 1 ) {
+    $a = 'left';
+  } else {
+    $a = 'right';
+  }
 	?>
 
   <li class="media">
-    <div class="media-left">
-      <?php if ( has_post_thumbnail() ) : the_post_thumbnail('compass-thumb'); 
+    <?php echo '<div class="media-' . $a . '">'; ?>
+      <?php if ( has_post_thumbnail() ) : the_post_thumbnail(); 
       endif; ?>
     </div>
     <div class="media-body">      
@@ -26,10 +33,11 @@ if ( $the_query->have_posts() ) :
     </div>
   </li>
 
-	<?php endwhile; ?>
+	<?php 
+  $i++;
+  endwhile; ?>
 
 </ul>
-</div>
 <?php endif; ?>
 <?php wp_reset_postdata(); ?>
 <!--
