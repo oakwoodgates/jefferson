@@ -37,3 +37,4 @@ require_once('typography.php');
 require_once('colors-brand.php');
 require_once('colors-standard.php');
 require_once('colors-neutral.php');
+require_once('general.php');
